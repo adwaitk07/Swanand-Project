@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,71 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Neon Studio</title>
+    <style>
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background: radial-gradient(circle at top left, #12344a 0%, #050711 45%, #02040a 100%);
+        color: #eef5ff;
+        font-family: 'Segoe UI Variable', 'Segoe UI', sans-serif;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      .boot-fallback {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .boot-card {
+        max-width: 560px;
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid rgba(71, 246, 255, 0.28);
+        background: rgba(10, 15, 28, 0.88);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .boot-card p {
+        margin: 0 0 12px;
+        line-height: 1.6;
+        color: rgba(238, 245, 255, 0.82);
+      }
+
+      .boot-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .boot-badge {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: #47f6ff;
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .boot-title {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-fallback">
+        <div class="boot-card">
+          <span class="boot-badge">Neon Studio</span>
+          <h1 class="boot-title">Loading the browser audio workspace</h1>
+          <p>If this message stays on screen after deployment, the site is probably serving the source folder instead of the built app.</p>
+          <p>For Netlify, run the build and publish <strong>dist</strong>, or use the included <strong>netlify.toml</strong> so Netlify builds it automatically.</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
